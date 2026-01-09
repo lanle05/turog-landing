@@ -1,0 +1,47 @@
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
+@use "../../utils/variables" as *;
+
+.about {
+  width: 100%;
+  padding: fluid(2rem, 4rem);
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      padding-inline: 20rem;
+    }
+
+    &__head {
+      font-size: fluid(32px, 44px);
+      color: $text-body;
+      padding-bottom: fluid(20px, 36px);
+    }
+
+    &__desc {
+      font-size: fluid(12px, 16px);
+      color: $text-body;
+      text-align: center;
+      padding-bottom: fluid(20px, 36px);
+    }
+
+    &__image {
+      width: 100%;
+
+      &-img {
+        width: 640px;
+        padding: 5px;
+        border-radius: 20px;
+        object-fit: cover;
+
+        @media(max-width:480px){
+          width: 275px;
+        }
+      }
+    }
+  }
+}

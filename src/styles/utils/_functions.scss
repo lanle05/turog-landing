@@ -1,0 +1,44 @@
+/* _functions.scss
+ * Utility SCSS functions
+ *
+ * Added: fluid() — returns a responsive/clamped value using clamp() and calc()
+ *
+ * Usage examples:
+ *   // Basic: fluid font-size from 16px at 320px viewport to 24px at 1200px viewport
+ *   font-size: fluid(16px, 24px);
+ *
+ *   // With custom viewport range
+ *   font-size: fluid(1rem, 1.5rem, 360px, 1280px);
+ *
+ * Notes:
+ * - $min and $max must both include units and be the same unit (e.g., both px or both rem).
+ * - $min-vw and $max-vw must be provided in px.
+ */
+
+@function fluid($min, $max, $min-vw: 320px, $max-vw: 1200px) {
+  // Basic validation
+  @if not(type-of($min) == "number" and type-of($max) == "number") {
+    @error "Both $min and $max must be numeric values with units (e.g., 16px or 1rem).";
+  }
+
+  @if unitless($min) or unitless($max) {
+    @error "Both $min and $max must include units.";
+  }
+
+  @if unit($min-vw) != "px" or unit($max-vw) != "px" {
+    @error "$min-vw and $max-vw must be specified in px.";
+  }
+
+  // If min and max are equal, just return min
+  @if $min == $max {
+    @return $min;
+  }
+
+  // Calculate slope (unitless) and intercept (same unit as $min/$max)
+  // slope = (max - min) / (max-vw - min-vw) * 100
+  // intercept = min - slope * (min-vw / 100)
+  $slope: ($max - $min) / ($max-vw - $min-vw) * 100;
+  $intercept: $min - $slope * ($min-vw / 100);
+
+  @return clamp(#{$min}, calc(#{$intercept} + #{$slope} * 1vw), #{$max});
+}

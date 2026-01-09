@@ -1,0 +1,58 @@
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
+@use "../../utils/variables" as *;
+
+.stats {
+  background: $bg-cream;
+  padding: fluid(40px, 80px) fluid(20px, 40px);
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    @include flex-center(row);
+    justify-content: space-between;
+    gap: fluid(20px, 30px);
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: fluid(24px, 36px);
+    color: $text-main;
+    font-weight: 600;
+    line-height: 1.4;
+    
+    strong {
+      color: $orange;
+      font-weight: 700;
+    }
+  }
+
+  &__description {
+    font-family: $font-body;
+    font-size: fluid(16px, 18px);
+    color: $text-body;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+
+  &__cta {
+    display: inline-block;
+    background: $orange;
+    color: $text-white;
+    font-family: $font-body;
+    font-size: fluid(14px, 16px);
+    font-weight: 600;
+    padding: fluid(12px, 16px) fluid(28px, 40px);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: fluid(10px, 20px);
+
+    &:hover {
+      background: darken(#f58634, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 134, 52, 0.3);
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use "../../utils/functions" as *;
+@use "../../utils/mixins" as *;
+@use "../../utils/variables" as *;
+
+.faq {
+  background: $bg-white;
+  padding: fluid(60px, 100px) fluid(20px, 40px);
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    font-family: $font-heading;
+    font-size: fluid(32px, 48px);
+    color: $text-main;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: fluid(16px, 24px);
+  }
+
+  &__subheading {
+    font-family: $font-body;
+    font-size: fluid(16px, 18px);
+    color: $text-body;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: fluid(40px, 60px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(16px, 20px);
+  }
+
+  &__item {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: $bg-white;
+    transition: all 0.3s ease;
+
+    &--active {
+      border-color: $orange;
+      box-shadow: 0 4px 12px rgba(245, 134, 52, 0.1);
+    }
+  }
+
+  &__question {
+    width: 100%;
+    @include flex-center(row, space-between, center);
+    padding: fluid(16px, 20px) fluid(20px, 24px);
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-family: $font-heading;
+    font-size: fluid(16px, 18px);
+    font-weight: 600;
+    color: $text-main;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: rgba(245, 134, 52, 0.05);
+    }
+
+    span:first-child {
+      flex: 1;
+      padding-right: fluid(12px, 16px);
+    }
+  }
+
+  &__icon {
+    font-size: fluid(20px, 24px);
+    font-weight: 400;
+    color: $orange;
+    min-width: fluid(24px, 30px);
+    @include flex-center(row);
+    transition: transform 0.3s ease;
+  }
+
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+
+    &--open {
+      max-height: 500px;
+      padding: 0 fluid(20px, 24px) fluid(16px, 20px);
+    }
+
+    p {
+      font-family: $font-body;
+      font-size: fluid(14px, 16px);
+      color: $text-body;
+      line-height: 1.7;
+      margin: 0;
+    }
+  }
+}

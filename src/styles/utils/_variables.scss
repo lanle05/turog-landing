@@ -1,0 +1,40 @@
+@use 'sass:map';
+
+:root {
+  /* 1. Brand Colors */
+  --color-primary: #212529; 
+  --color-brand-orange: #f58634; 
+  --color-accent-gold: #e2c8aa;
+
+  /* 2. Backgrounds */
+  --color-bg-white: #ffffff;
+  --color-bg-cream: #fffbf0; 
+  --color-bg-hero: #f4f4f4;
+  --color-bg-dark: #151b26; 
+
+  /* 3. Typography */
+  --color-text-main: #333333;
+  --color-text-body: #212529;
+  --color-text-white: #ffffff;
+
+  /* 4. Fonts */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+// SCSS Variables
+$primary: var(--color-primary);
+$orange: var(--color-brand-orange);
+$gold: var(--color-accent-gold);
+
+$bg-white: var(--color-bg-white);
+$bg-cream: var(--color-bg-cream);
+$bg-hero: var(--color-bg-hero);
+$bg-dark: var(--color-bg-dark);
+
+$text-main: var(--color-text-main);
+$text-body: var(--color-text-body);
+$text-white: var(--color-text-white);
+
+$font-heading: var(--font-heading);
+$font-body: var(--font-body);
