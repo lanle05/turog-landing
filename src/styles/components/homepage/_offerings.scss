@@ -35,7 +35,7 @@
     grid-template-columns: 1fr;
     gap: fluid(40px, 60px);
 
-    @media (min-width: 768px) {
+    @media (width: 768px) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -52,12 +52,20 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
+
+    @media(min-width:1024px){
+        flex-direction: row;
+    }
   }
 
   &__image-wrapper {
     width: 100%;
     height: fluid(200px, 280px);
     overflow: hidden;
+
+    @media(min-width:1024px){
+        width:30%;
+    }
   }
 
   &__image {

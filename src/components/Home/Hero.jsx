@@ -1,10 +1,11 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation, Autoplay, EffectFade, Pagination } from "swiper/modules";
 //Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import "swiper/css/pagination";
 //icons
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
 
@@ -33,13 +34,17 @@ const Hero = () => {
   return (
     <section className="hero">
       <Swiper
-        modules={[Navigation, Autoplay, EffectFade]}
+        modules={[Navigation, Autoplay, EffectFade, Pagination]}
         spaceBetween={0}
         slidesPerView={1}
         fadeEffect={{ crossFade: true }}
         navigation={{
           nextEl: ".hero__nav--next",
           prevEl: ".hero__nav--prev",
+        }}
+        pagination={{
+          el: ".hero__pagination",
+          clickable: true,
         }}
         effect={"fade"} // Smooth fade transition
         speed={800}
@@ -82,6 +87,9 @@ const Hero = () => {
         <button className="hero__nav hero__nav--next">
           <IoChevronForward />
         </button>
+
+        {/* Pagination Dots */}
+        <div className="hero__pagination"></div>
       </Swiper>
     </section>
   );

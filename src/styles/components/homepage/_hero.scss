@@ -72,7 +72,7 @@
 
       @media(max-width:640px){
         padding-top: 3rem;
-    }
+      }
     }
 
     p {
@@ -84,19 +84,20 @@
       font-weight: 100;
       max-width: 500px;
     }
-}
-.btn {
-  padding-inline: fluid(2rem, 2.4rem);
-      padding-block: fluid(0.75rem, 1.2rem);
-      background-color: $orange;
-      color: $bg-white;
-      border-radius: 9px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: background-color 0.3s;
-      border: none;
-}
+  }
+
+  .btn {
+    padding-inline: fluid(2rem, 2.4rem);
+    padding-block: fluid(0.75rem, 1.2rem);
+    background-color: $orange;
+    color: $bg-white;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+    border: none;
+  }
 
   &__visuals {
     display: flex;
@@ -150,11 +151,24 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 50;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.9);
     border: none;
     color: $text-main;
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-50%) scale(1.1);
+    }
 
     &--prev {
       left: 20px;
@@ -165,6 +179,36 @@
 
     @media (max-width: 768px) {
       display: none;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    gap: 10px;
+
+    :global(.swiper-pagination-bullet) {
+      width: 12px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.5);
+      opacity: 1;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      background: $orange;
+      width: 30px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      bottom: 10px;
     }
   }
 }

@@ -4,7 +4,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      image: "/testimonials/gbenga-image.jpg", // Replace with actual image path
+      image: "/testimonials/gbenga-image.jpg", 
       name: "Gbenga Omolokun",
       title: "CEO, Ceviant",
       quoteTitle: "Outstanding Service and Expertise!",
@@ -13,7 +13,7 @@ const Testimonials = () => {
     },
     {
       id: 2,
-      image: "/testimonials/robert-image.jpg", // Replace with actual image path
+      image: "/testimonials/robert-image.jpg", 
       name: "Robert Jakech",
       title: "CTO, Fiter",
       quoteTitle: "Partnering for Success!",
@@ -22,7 +22,7 @@ const Testimonials = () => {
     },
     {
       id: 3,
-      image: "/testimonials/daniel-image.png", // Replace with actual image path
+      image: "/testimonials/daniel-image.png", 
       name: "Babatunde Daniel",
       title: "CTO, VFD Tech",
       quoteTitle: "A Breath of Fresh Air!",
@@ -31,7 +31,7 @@ const Testimonials = () => {
     },
     {
       id: 4,
-      image: "/testimonials/sola-image.jpg", // Replace with actual image path
+      image: "/testimonials/sola-image.jpg", 
       name: "Sola Ajayi",
       title: "Engineering Mgr., Shara",
       quoteTitle: "Exceptional Problem Solvers!",
