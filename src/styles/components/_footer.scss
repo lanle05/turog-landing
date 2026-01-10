@@ -4,8 +4,13 @@
 
 .footer {
   background: $bg-dark;
-  padding: fluid(50px, 80px) fluid(20px, 40px);
+  //padding: fluid(50px, 80px) fluid(20px, 40px);
   color: $text-white;
+  padding: 88px 0 56px;
+
+  @media(max-width:1024px){
+    padding-inline: 24px;
+  }
 
   &__container {
     max-width: 1200px;

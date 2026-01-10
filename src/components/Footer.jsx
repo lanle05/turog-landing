@@ -1,4 +1,8 @@
 import React from "react";
+import { PiBuildingOffice } from "react-icons/pi";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaPhoneAlt, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -49,27 +53,17 @@ const Footer = () => {
             <h3 className="footer__heading">Connect with us</h3>
             <ul className="footer__contact">
               <li className="footer__contact-item">
-                <img
-                  src="/path/to/map-icon.png"
-                  alt="Location"
-                  className="footer__icon"
-                />
+                <PiBuildingOffice className="footer__icon" />
                 <span>16 Idowu Martins St, Eti-Osa, Victoria Island</span>
               </li>
               <li className="footer__contact-item">
-                <img
-                  src="/path/to/envelope-icon.png"
-                  alt="Email"
-                  className="footer__icon"
-                />
+                <MdOutlineEmail className="footer__icon" />
+
                 <a href="mailto:info@turog.ng">info@turog.ng</a>
               </li>
               <li className="footer__contact-item">
-                <img
-                  src="/path/to/call-icon.png"
-                  alt="Phone"
-                  className="footer__icon"
-                />
+                <FaPhoneAlt className="footer__icon" />
+
                 <a href="tel:+2348022279770">+234 802-227-9770</a>
               </li>
             </ul>
@@ -79,27 +73,24 @@ const Footer = () => {
                 {/* Add your social media icons/links here */}
                 <a
                   href="#"
-                  aria-label="Facebook"
+                  aria-label="X(formerly, Twitter)"
                   className="footer__social-link"
                 >
-                  {/* Facebook icon placeholder */}
-                  <span>FB</span>
-                </a>
-                <a
-                  href="#"
-                  aria-label="Twitter"
-                  className="footer__social-link"
-                >
-                  {/* Twitter icon placeholder */}
-                  <span>TW</span>
+                  <FaXTwitter />
                 </a>
                 <a
                   href="#"
                   aria-label="LinkedIn"
                   className="footer__social-link"
                 >
-                  {/* LinkedIn icon placeholder */}
-                  <span>LI</span>
+                  <FaLinkedinIn />
+                </a>
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="footer__social-link"
+                >
+                  <FaInstagram />
                 </a>
               </div>
             </div>

@@ -57,12 +57,12 @@
 
   &__content {
     h1 {
-      font-family: $font-heading;
+      font-family: #212529;
       font-size: 2.5rem;
       color: $text-main;
       margin-bottom: 1.5rem;
       line-height: 1.2;
-      font-weight: 200;
+      font-weight: 100;
 
       @media (min-width: 1024px) {
         font-size: 3.5rem;
@@ -74,7 +74,7 @@
     }
 
     p {
-      font-family: $font-body;
+      font-family: #212529;
       font-size: fluid(1rem, 1.5rem);
       color: $text-body;
       margin-bottom: 2rem;

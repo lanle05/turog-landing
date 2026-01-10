@@ -3,9 +3,12 @@
 @use "../../utils/variables" as *;
 
 .mission {
-  background: $bg-dark;
-  padding: fluid(60px, 100px) fluid(20px, 40px);
+  background: #e9ecef;
+  padding: fluid(60px, 100px) fluid(80px, 150px);
 
+  @media(max-width:768px){
+    padding: fluid(50px, 60px) fluid(20px, 40px);
+  }
   &__container {
     max-width: 1000px;
     margin: 0 auto;
@@ -13,30 +16,49 @@
   }
 
   &__heading {
-    font-family: $font-heading;
-    font-size: fluid(32px, 48px);
-    color: $text-white;
-    font-weight: 700;
-    margin-bottom: fluid(16px, 24px);
+    font-family: #212529;
+      font-size: 2.5rem;
+      color: $text-main;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      font-weight: 100;
+      margin-bottom: fluid(16px, 24px);
+
+      @media (min-width: 1024px) {
+        font-size: 3.5rem;
+      }
+
+      @media (max-width: 640px) {
+        padding-top: 3rem;
+      }
+    
   }
 
   &__tagline {
-    font-family: $font-heading;
-    font-size: fluid(20px, 28px);
-    color: $gold;
-    font-weight: 600;
-    margin-bottom: fluid(30px, 50px);
-    line-height: 1.4;
+    font-family: $font-body;
+    font-size: fluid(16px, 18px);
+    color: $text-body;
+    text-align: center;
+    font-weight: 100;
+    line-height: 1.6;
+    margin-bottom: fluid(40px, 60px);
   }
 
   &__content {
     @include flex-center(column);
     gap: fluid(20px, 30px);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 7px;
+    padding: 1rem 1rem;
+
+    @media(min-width:1024px){
+      padding: 2rem 2rem;
+    }
 
     p {
       font-family: $font-body;
       font-size: fluid(15px, 17px);
-      color: rgba(255, 255, 255, 0.85);
+      color: #6c757d;
       line-height: 1.8;
       text-align: left;
       margin: 0;

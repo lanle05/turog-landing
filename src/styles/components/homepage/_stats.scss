@@ -4,6 +4,7 @@
 
 .stats {
   background: $bg-cream;
+  margin-top: fluid(30px, 60px);
   padding: fluid(40px, 80px) fluid(20px, 40px);
 
   &__container {
