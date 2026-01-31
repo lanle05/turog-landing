@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 85vh;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+    z-index: 0;
+  }
+
+  &__carousel {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__visuals {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__collage {
+    position: relative;
+    width: min(600px, 100%);
+    aspect-ratio: 5 / 3;
+    height: auto;
+  }
+
+  &__imgBox {
+    overflow: hidden;
+    border-radius: 40px;
+    border: 4px solid white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: absolute;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__img1 {
+    top: -5%;
+    left: 0;
+    width: 58%;
+    height: 52%;
+    z-index: 2;
+  }
+
+  &__img2 {
+    bottom: -10%;
+    left: 0;
+    width: 58%;
+    height: 52%;
+    z-index: 3;
+  }
+
+  &__img3 {
+    top: 12%;
+    right: 0;
+    width: 80%;
+    height: 90%;
+    z-index: 1;
+  }
+
+}
+
+.root{
+  height: 450px;
+  
+  @media(min-width: 1200px){
+    height: 600px;
+  }
+}
+
+.controls {
+  position: absolute;
+  
+}
+
+.control {
+ 
+  background-color: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  &:first-child {
+    left: 20px;
+  }
+
+  &:last-child {
+    right: 20px;
+  }
+}
+
+// Optional indicator shape (visual only)
+.indicators {
+  bottom:-20%;
+  transition: all 0.3s ease;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+    bottom: -10%;
+  }
+}
+
+// Mantine adds data-active on active indicator
+.indicator {
+  color: white;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+  height: 10px;
+  width: 40px;
+  
+}

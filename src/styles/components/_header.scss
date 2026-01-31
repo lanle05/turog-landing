@@ -1,0 +1,124 @@
+@use "../utils/functions" as *;
+@use "../utils/mixins" as *;
+@use "../mantine" as m;
+
+/* HEADER */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+  &--scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+
+    &::before {
+      opacity: 0.08;
+    }
+  }
+
+  &--solid {
+    background-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+
+    &::before {
+      opacity: 0.08;
+    }
+  }
+
+  // Noise texture overlay
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* DESKTOP NAV */
+  &__menu-link {
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    @include m.hover {
+      color: var(--mantine-color-brandOrange-5);
+    }
+  }
+
+  &__chevron-icon {
+    transition: transform 0.3s ease;
+    color: var(--mantine-color-brandGrey-9);
+  }
+
+  &__menu-link:hover &__chevron-icon {
+    transform: rotate(180deg);
+  }
+
+  /* DROPDOWN  */
+
+  &__dropdown-link {
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    @include m.hover {
+      color: var(--mantine-color-brandOrangish-8);
+      background-color: #f9fafb;
+    }
+  }
+
+  /* CTA BUTTON */
+  &__cta-button {
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* MOBILE MENU */
+  &__mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  &__mobile-link {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    @include m.hover {
+      background-color: #f9fafb;
+    }
+  }
+
+  &__mobile-sublinks {
+    border-left: 1px solid #e5e7eb;
+  }
+
+  &__mobile-sublink {
+    display: block;
+    transition: color 0.2s ease;
+
+    @include m.hover {
+      color: var(--mantine-color-brandGrey-9);
+    }
+  }
+}
